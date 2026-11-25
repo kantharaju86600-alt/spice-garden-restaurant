@@ -1,0 +1,1809 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Spice Garden Restaurant</title>
+
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf2;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #7b1e1e;
+    color: white;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffd54f;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd54f;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 520px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.55)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #e65100;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #bf360c;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 70px 6%;
+}
+
+.section-title {
+    text-align: center;
+    color: #7b1e1e;
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: white;
+}
+
+.about-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-box p {
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    background: #fffaf2;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.menu-content {
+    padding: 18px;
+}
+
+.menu-content h3 {
+    color: #7b1e1e;
+    margin-bottom: 7px;
+}
+
+.menu-content p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 21px;
+    font-weight: bold;
+    color: #e65100;
+    margin-bottom: 15px;
+}
+
+.button-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.order-btn,
+.cart-btn {
+    border: none;
+    padding: 10px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.order-btn {
+    background: #7b1e1e;
+}
+
+.order-btn:hover {
+    background: #5d1515;
+}
+
+.cart-btn {
+    background: #e65100;
+}
+
+.cart-btn:hover {
+    background: #bf360c;
+}
+
+
+/* =========================
+   ORDER SECTION
+========================= */
+
+.order-section {
+    background: #f8e9d5;
+}
+
+.order-container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.order-form {
+    display: grid;
+    gap: 15px;
+}
+
+.order-form label {
+    font-weight: bold;
+    color: #7b1e1e;
+}
+
+.order-form input,
+.order-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.order-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+    outline: none;
+    border-color: #e65100;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart-box {
+    margin-top: 25px;
+    padding: 20px;
+    background: #fffaf2;
+    border: 2px solid #e8c7a0;
+    border-radius: 10px;
+}
+
+.cart-box h3 {
+    color: #7b1e1e;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 5px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    color: #7b1e1e;
+    font-size: 17px;
+}
+
+.cart-item-price {
+    color: #555;
+    margin: 5px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.quantity-controls button {
+    border: none;
+    background: #7b1e1e;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.quantity-controls button:hover {
+    background: #5d1515;
+}
+
+.quantity-number {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #b71c1c !important;
+    width: auto !important;
+    padding: 0 10px;
+    font-size: 14px !important;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    color: #e65100;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.contact-card {
+    background: #fffaf2;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.contact-card h3 {
+    color: #7b1e1e;
+    margin-bottom: 10px;
+}
+
+.contact-card a {
+    color: #e65100;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #3b1111;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer h2 {
+    color: #ffd54f;
+    margin-bottom: 8px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 14px;
+    }
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .order-container {
+        padding: 20px;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+
+    .order-btn,
+    .cart-btn {
+        width: 100%;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        🌶️ Spice <span>Garden</span>
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#menu">Menu</a>
+
+        <a href="#about">About</a>
+
+        <a href="#order">Order</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Welcome to Spice Garden
+        </h1>
+
+        <p>
+            Delicious Food • Fresh Ingredients • Great Taste
+        </p>
+
+        <a href="#menu" class="btn">
+            Explore Our Menu
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About Spice Garden
+    </h2>
+
+    <p class="section-subtitle">
+        Taste the goodness in every bite
+    </p>
+
+    <div class="about-box">
+
+        <p>
+            Spice Garden Restaurant brings you
+            delicious food prepared with quality
+            ingredients and lots of care.
+        </p>
+
+        <p>
+            From biryani and starters to refreshing
+            drinks, we aim to provide tasty food
+            and a great dining experience.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="menu" id="menu">
+
+    <h2 class="section-title">
+        Our Menu
+    </h2>
+
+    <p class="section-subtitle">
+        Choose your favourite food
+    </p>
+
+
+    <div class="menu-grid">
+
+
+        <!-- CHICKEN BIRYANI -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="images/chicken-biryani.jpg"
+                alt="Chicken Biryani">              
+
+            <div class="menu-content">
+
+                <h3>
+                    Chicken Biryani
+                </h3>
+
+                <p>
+                    Aromatic biryani with tender chicken.
+                </p>
+
+                <div class="price">
+                    ₹180
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Chicken Biryani', 180)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Chicken Biryani', 180)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CHICKEN 65 -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="images/chicken-65.jpg"
+                alt="Chicken 65">
+
+            <div class="menu-content">
+
+                <h3>
+                    Chicken 65
+                </h3>
+
+                <p>
+                    Crispy spicy chicken starter.
+                </p>
+
+                <div class="price">
+                    ₹190
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Chicken 65', 190)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Chicken 65', 190)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PANEER BUTTER MASALA -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80"
+                alt="Paneer Butter Masala">
+
+            <div class="menu-content">
+
+                <h3>
+                    Paneer Butter Masala
+                </h3>
+
+                <p>
+                    Creamy paneer cooked in rich gravy.
+                </p>
+
+                <div class="price">
+                    ₹160
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Paneer Butter Masala', 160)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Paneer Butter Masala', 160)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VEG BIRYANI -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=800&q=80"
+                alt="Veg Biryani">
+
+            <div class="menu-content">
+
+                <h3>
+                    Veg Biryani
+                </h3>
+
+                <p>
+                    Flavourful rice with fresh vegetables.
+                </p>
+
+                <div class="price">
+                    ₹150
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Veg Biryani', 150)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Veg Biryani', 150)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GOBI MANCHURIAN -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+               src="images/gobi-manchurian.jpg"         
+                alt="Gobi Manchurian">
+
+            <div class="menu-content">
+
+                <h3>
+                    Gobi Manchurian
+                </h3>
+
+                <p>
+                    Crispy cauliflower with spicy sauce.
+                </p>
+
+                <div class="price">
+                    ₹140
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Gobi Manchurian', 140)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Gobi Manchurian', 140)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- VEG PIZZA -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=80"
+                alt="Veg Pizza">
+
+            <div class="menu-content">
+
+                <h3>
+                    Veg Pizza
+                </h3>
+
+                <p>
+                    Cheesy pizza loaded with vegetables.
+                </p>
+
+                <div class="price">
+                    ₹220
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Veg Pizza', 220)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Veg Pizza', 220)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CHICKEN BURGER -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                alt="Chicken Burger">
+
+            <div class="menu-content">
+
+                <h3>
+                    Chicken Burger
+                </h3>
+
+                <p>
+                    Juicy chicken burger with fresh toppings.
+                </p>
+
+                <div class="price">
+                    ₹150
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Chicken Burger', 150)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Chicken Burger', 150)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FRENCH FRIES -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+                alt="French Fries">
+
+            <div class="menu-content">
+
+                <h3>
+                    French Fries
+                </h3>
+
+                <p>
+                    Crispy golden fries.
+                </p>
+
+                <div class="price">
+                    ₹100
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('French Fries', 100)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('French Fries', 100)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COLD COFFEE -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="images/cold-coffee.jpg" 
+                 alt="Cold Coffee"> 
+            <div class="menu-content">
+             
+                <h3>
+                    Cold Coffee
+                </h3>
+
+                <p>
+                    Refreshing chilled creamy coffee.
+                </p>
+
+                <div class="price">
+                    ₹90
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Cold Coffee', 90)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Cold Coffee', 90)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FRESH LIME SODA -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80"
+                alt="Fresh Lime Soda">
+
+            <div class="menu-content">
+
+                <h3>
+                    Fresh Lime Soda
+                </h3>
+
+                <p>
+                    Fresh and refreshing lime drink.
+                </p>
+
+                <div class="price">
+                    ₹70
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Fresh Lime Soda', 70)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Fresh Lime Soda', 70)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FRESH JUICE -->
+
+        <div class="menu-card">
+
+            <img
+                class="food-image"
+                src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=80"
+                alt="Fresh Juice">
+
+            <div class="menu-content">
+
+                <h3>
+                    Fresh Juice
+                </h3>
+
+                <p>
+                    Freshly prepared fruit juice.
+                </p>
+
+                <div class="price">
+                    ₹80
+                </div>
+
+                <div class="button-row">
+
+                    <button
+                        class="order-btn"
+                        onclick="orderNow('Fresh Juice', 80)">
+                        Order Now
+                    </button>
+
+                    <button
+                        class="cart-btn"
+                        onclick="addToCart('Fresh Juice', 80)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ORDER
+========================= -->
+
+<section class="order-section" id="order">
+
+    <h2 class="section-title">
+        Order Your Food
+    </h2>
+
+    <p class="section-subtitle">
+        Fill in your details and place your order
+    </p>
+
+
+    <div class="order-container">
+
+        <form
+            class="order-form"
+            onsubmit="placeCartOrder(); return false;">
+
+
+            <label for="customerName">
+                Customer Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your name"
+                required>
+
+
+
+            <label for="customerPhone">
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Enter your phone number"
+                required>
+
+
+
+            <label for="deliveryAddress">
+                Delivery Address
+            </label>
+
+            <textarea
+                id="deliveryAddress"
+                placeholder="Enter your complete delivery address"
+                required></textarea>
+
+
+
+            <!-- CART -->
+
+            <div class="cart-box">
+
+                <h3>
+                    🛒 Your Cart
+                </h3>
+
+                <div id="cartItems">
+                    No items added yet.
+                </div>
+
+                <div
+                    class="cart-total"
+                    id="cartTotal">
+                    Total: ₹0
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn">
+                Place Cart Order
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <p class="section-subtitle">
+        We would love to hear from you
+    </p>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+            <h3>
+                📞 Phone
+            </h3>
+
+            <p>
+                <a href="tel:+918660071505">
+                    +91 86600 71505
+                </a>
+            </p>
+
+        </div>
+
+
+
+        <div class="contact-card">
+
+            <h3>
+                💬 WhatsApp
+            </h3>
+
+            <p>
+
+                <a
+                    href="https://wa.me/918660071505"
+                    target="_blank">
+                    Chat on WhatsApp
+                </a>
+
+            </p>
+
+        </div>
+
+
+
+        <div class="contact-card">
+
+            <h3>
+                📍 Location
+            </h3>
+
+            <p>
+                Spice Garden Restaurant
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        🌶️ Spice Garden Restaurant
+    </h2>
+
+    <p>
+        Delicious Food • Great Taste • Happy Customers
+    </p>
+
+    <p>
+        Learn • Eat • Enjoy
+    </p>
+
+    <p>
+        Educational Restaurant Website Project
+    </p>
+
+    <p>
+        © 2026 Spice Garden Restaurant
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================
+   INDIVIDUAL ORDER NOW
+========================= */
+
+function orderNow(itemName, price) {
+
+    let quantity =
+        prompt(
+            "Enter quantity for " +
+            itemName +
+            ":",
+            "1"
+        );
+
+
+    if (quantity === null) {
+        return;
+    }
+
+
+    quantity =
+        parseInt(quantity);
+
+
+    if (
+        isNaN(quantity) ||
+        quantity < 1
+    ) {
+
+        alert(
+            "Please enter a valid quantity."
+        );
+
+        return;
+    }
+
+
+    let total =
+        price * quantity;
+
+
+    let message =
+        "Hello Spice Garden Restaurant!%0A%0A" +
+
+        "I would like to order:%0A" +
+
+        "Food: " +
+        encodeURIComponent(itemName) +
+        "%0A" +
+
+        "Price per item: ₹" +
+        price +
+        "%0A" +
+
+        "Quantity: " +
+        quantity +
+        "%0A" +
+
+        "Total: ₹" +
+        total;
+
+
+    let whatsappNumber =
+        "918660071505";
+
+
+    let whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+}
+
+
+
+/* =========================
+   CART
+========================= */
+
+let cart = [];
+
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addToCart(name, price) {
+
+    let existingItem =
+        cart.find(function(item) {
+
+            return item.name === name;
+
+        });
+
+
+    if (existingItem) {
+
+        existingItem.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: name,
+            price: price,
+            quantity: 1
+
+        });
+
+    }
+
+
+    displayCart();
+
+}
+
+
+
+/* =========================
+   DISPLAY CART
+========================= */
+
+function displayCart() {
+
+    let cartItems =
+        document.getElementById(
+            "cartItems"
+        );
+
+    let cartTotal =
+        document.getElementById(
+            "cartTotal"
+        );
+
+
+    if (
+        !cartItems ||
+        !cartTotal
+    ) {
+
+        return;
+
+    }
+
+
+    cartItems.innerHTML = "";
+
+    let total = 0;
+
+
+    if (cart.length === 0) {
+
+        cartItems.textContent =
+            "No items added yet.";
+
+        cartTotal.textContent =
+            "Total: ₹0";
+
+        return;
+
+    }
+
+
+    cart.forEach(function(item, index) {
+
+        let itemTotal =
+            item.price *
+            item.quantity;
+
+
+        total += itemTotal;
+
+
+        let itemDiv =
+            document.createElement(
+                "div"
+            );
+
+
+        itemDiv.className =
+            "cart-item";
+
+
+        itemDiv.innerHTML =
+
+            "<div class='cart-item-name'>" +
+
+            item.name +
+
+            "</div>" +
+
+            "<div class='cart-item-price'>" +
+
+            "₹" +
+            item.price +
+            " × " +
+            item.quantity +
+            " = ₹" +
+            itemTotal +
+
+            "</div>" +
+
+            "<div class='quantity-controls'>" +
+
+            "<button type='button' onclick='decreaseQuantity(" +
+            index +
+            ")'>−</button>" +
+
+            "<span class='quantity-number'>" +
+            item.quantity +
+            "</span>" +
+
+            "<button type='button' onclick='increaseQuantity(" +
+            index +
+            ")'>+</button>" +
+
+            "<button type='button' class='remove-btn' onclick='removeFromCart(" +
+            index +
+            ")'>Remove</button>" +
+
+            "</div>";
+
+
+        cartItems.appendChild(
+            itemDiv
+        );
+
+    });
+
+
+    cartTotal.innerHTML =
+        "Total: ₹" +
+        total;
+
+}
+
+
+
+/* =========================
+   INCREASE QUANTITY
+========================= */
+
+function increaseQuantity(index) {
+
+    if (
+        cart[index]
+    ) {
+
+        cart[index].quantity++;
+
+        displayCart();
+
+    }
+
+}
+
+
+
+/* =========================
+   DECREASE QUANTITY
+========================= */
+
+function decreaseQuantity(index) {
+
+    if (
+        !cart[index]
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        cart[index].quantity > 1
+    ) {
+
+        cart[index].quantity--;
+
+    } else {
+
+        cart.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    displayCart();
+
+}
+
+
+
+/* =========================
+   REMOVE ITEM
+========================= */
+
+function removeFromCart(index) {
+
+    if (
+        cart[index]
+    ) {
+
+        cart.splice(
+            index,
+            1
+        );
+
+        displayCart();
+
+    }
+
+}
+
+
+
+/* =========================
+   PLACE CART ORDER
+========================= */
+
+function placeCartOrder() {
+
+    if (
+        cart.length === 0
+    ) {
+
+        alert(
+            "Please add items to your cart first."
+        );
+
+        return;
+
+    }
+
+
+    let name =
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
+
+    let phone =
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
+
+
+    let address =
+        document.getElementById(
+            "deliveryAddress"
+        ).value.trim();
+
+
+    if (
+        name === "" ||
+        phone === "" ||
+        address === ""
+    ) {
+
+        alert(
+            "Please fill in your name, phone number and delivery address."
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "NEW FOOD ORDER%0A%0A" +
+
+        "Name: " +
+        encodeURIComponent(
+            name
+        ) +
+
+        "%0A" +
+
+        "Phone: " +
+        encodeURIComponent(
+            phone
+        ) +
+
+        "%0A%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach(
+        function(item) {
+
+            let itemTotal =
+                item.price *
+                item.quantity;
+
+
+            total += itemTotal;
+
+
+            message +=
+
+                "Food: " +
+                encodeURIComponent(
+                    item.name
+                ) +
+
+                "%0A" +
+
+                "Price per item: ₹" +
+                item.price +
+
+                "%0A" +
+
+                "Quantity: " +
+                item.quantity +
+
+                "%0A" +
+
+                "Item Total: ₹" +
+                itemTotal +
+
+                "%0A%0A";
+
+        }
+    );
+
+
+    message +=
+
+        "Total: ₹" +
+        total +
+
+        "%0A" +
+
+        "Delivery Address: " +
+        encodeURIComponent(
+            address
+        );
+
+
+    let restaurantWhatsApp =
+        "918660071505";
+
+
+    let whatsappURL =
+        "https://wa.me/" +
+        restaurantWhatsApp +
+        "?text=" +
+        message;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+
+/* =========================
+   INITIAL CART DISPLAY
+========================= */
+
+displayCart();
+
+
+</script>
+
+
+</body>
+
+</html>
+```
